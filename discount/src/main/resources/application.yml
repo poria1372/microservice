@@ -1,0 +1,12 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/microservice
+    username: pouria
+    password: 9776Pl_GSP
+  jpa:
+    hibernate:
+      ddl-auto:update
+    show-sql: true
+server:
+  port: 9090

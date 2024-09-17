@@ -1,0 +1,11 @@
+
+CREATE DATABASE IF NOT EXISTS microservice;
+
+show databases;
+
+create user 'pouria'@'localhost' identified by '9776Pl_GSP';
+
+grant all privileges on microservice.* to 'pouria'@'localhost';
+
+
+use microservice;
