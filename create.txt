@@ -7,5 +7,21 @@ create user 'pouria'@'localhost' identified by '9776Pl_GSP';
 
 grant all privileges on microservice.* to 'pouria'@'localhost';
 
-
 use microservice;
+
+create table product(
+id bigint not null
+auto_increment,
+name varchar(255),
+description varchar(255),
+price decimal(19,2),
+primary key (id)
+);
+
+create table notification(
+id bigint not null
+auto_increment,
+message varchar(255),
+sender varchar(255),
+primary key (id)
+);

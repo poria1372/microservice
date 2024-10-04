@@ -10,12 +10,18 @@
   <name>microservice</name>
   <url>http://maven.apache.org</url>
   <modules>
-    <module>discount</module>
-    <module>product</module>
+    <module>_02discount</module>
+    <module>_01product</module>
+    <module>_03eureka-server</module>
+    <module>notification</module>
+    <module>_04client</module>
+      <module>_06gatewayservice</module>
   </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring.boot.version>3.3.3</spring.boot.version>
+    <spring.cloud.version>2023.0.3</spring.cloud.version>
   </properties>
 
   <dependencyManagement>
@@ -23,7 +29,14 @@
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.3</version>
+        <version>${spring.boot.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring.cloud.version}</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -35,6 +48,16 @@
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <optional>true</optional>
+    </dependency>
+
+<!--    todo : open Feign-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-openfeign</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
   </dependencies>
 
